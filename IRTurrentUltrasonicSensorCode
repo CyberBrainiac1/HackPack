@@ -170,7 +170,7 @@ void loop() {
     float distance = getDistance();
     if (armed) { 
       Serial.print("Distance: "); Serial.println(distance); 
-      if (distance > (2 * armedDistance)) {
+      if (distance < (1 * armedDistance)) {
         fireAll();
         disarm();
       }
@@ -358,4 +358,4 @@ void homeServos(){
     pitchServoVal = 100; // store the pitch servo value
     Serial.println("HOMING");
 }
-
+   
